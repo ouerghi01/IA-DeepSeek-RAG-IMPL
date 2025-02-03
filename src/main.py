@@ -33,8 +33,9 @@ def initialize_database_session():
     with open("token.json") as f:
        secrets = json.load(f)
 
-    CLIENT_ID = secrets["clientId"]
-    CLIENT_SECRET = secrets["secret"]
+    CLIENT_ID = "QZmZBwMddMIhvTUficfKSLTo"
+    CLIENT_SECRET =  "ghKn-wjZZgejdNgZ9vs55lH,cCfG+ocQJdrCEDYAm,.vC,vzCIoAytba5crSRXQ12INq2uPmr3++L_7Iq+3WxdWAII,J84TDM.A5hZU_eN1T4_fdUnq3I1UmBn3og0_7",
+
 
     auth_provider = PlainTextAuthProvider(CLIENT_ID, CLIENT_SECRET)
     cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
