@@ -27,10 +27,10 @@ from datetime import datetime
 
 def initialize_database_session():
     cloud_config = {
-    'secure_connect_bundle': '/app/secure-connect-store-base.zip'
+    'secure_connect_bundle': 'secure-connect-store-base.zip'
     }
 
-    with open("/app/token.json") as f:
+    with open("token.json") as f:
        secrets = json.load(f)
 
     CLIENT_ID = secrets["clientId"]
@@ -134,7 +134,6 @@ def build_q_a_process(retrieval,model_name="deepseek-r1:1.5b"):
         callbacks=None,
         document_prompt=document_prompt  
     )
-
     qa = RetrievalQA(
         combine_documents_chain=combine_documents_chain,  
         retriever=retrieval,
@@ -148,7 +147,7 @@ model_name = "qwen2:0.5b"
 UPLOAD_DIR = Path("uploads")  
 UPLOAD_DIR.mkdir(exist_ok=True)  
 session = None
-default_path_file = Path("/app/uploads/data.pdf")
+default_path_file = Path("uploads/data.pdf")
 Retrieval = None
 qa = None
 
